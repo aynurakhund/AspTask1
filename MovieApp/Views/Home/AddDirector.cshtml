@@ -1,0 +1,19 @@
+﻿@model DirectorDto
+
+
+<h1>AddDirector</h1>
+
+<form method="post">
+    <div>
+        <label for="movieName" class="form-label">First Name</label>
+        <input type="text" id="movieName" class="form-control" asp-for="FirstName" aria-describedby="passwordHelpBlock">
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div>
+        <label for="imgUrl" class="form-label">Last Name</label>
+        <input type="text" asp-for="LastName" id="imgUrl" class="form-control" aria-describedby="passwordHelpBlock">
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div> <button class="btn btn-outline-warning mt-2" type="submit">Add</button></div>
+</form>

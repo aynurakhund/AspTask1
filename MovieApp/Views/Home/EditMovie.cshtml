@@ -1,0 +1,34 @@
+﻿@model MovieDto
+
+<h1>EditMovie</h1>
+
+<form method="post">
+    <div>
+        <label for="movieName" class="form-label">Movie Name</label>
+        <input type="text" id="movieName" class="form-control-plaintext" readonly value="@ViewData["movieId"]" aria-describedby="passwordHelpBlock">
+
+    </div>
+    <div>
+        <label for="movieName" class="form-label">Movie Name</label>
+        <input type="text" id="movieName" class="form-control" asp-for="movieName" aria-describedby="passwordHelpBlock">
+       
+    </div>
+    <div>
+        <label for="imgUrl" class="form-label">Movie img</label>
+        <input type="text" id="imgUrl" class="form-control" asp-for="imgUrl" aria-describedby="passwordHelpBlock">
+      
+    </div>
+    <label for="directorName" class="form-label">Director Name</label>
+    <div class="form-control col-sm-8 mt-2 d-flex flex-column" id="directorName">
+        <div> @await Component.InvokeAsync("ShowDirectors") </div>
+    </div>
+    <label for="ImdbPoint" class="form-label">Imdb Point</label>
+    <div class="form-control mt-2 d-flex flex-column" id="ImdbPoint">
+        <div> @await Component.InvokeAsync("ShowImdbs")</div>
+
+    </div>
+
+    <div> <button class="btn btn-outline-warning mt-2" type="submit">Edit</button></div>
+</form>
+
+

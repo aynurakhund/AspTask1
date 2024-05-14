@@ -1,0 +1,33 @@
+﻿@model MovieDto
+@{
+    ViewData["Title"] = "AddMovie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>AddMovie</h1>
+
+<form method="post" >
+    <label for="directorName" class="form-label">Director Name</label>
+    <div class="form-control col-sm-8 mt-2 d-flex flex-column" id="directorName">
+        <div> @await Component.InvokeAsync("ShowDirectors") </div>
+        <p>If you want to ad Director? <a class="btn btn-warning" asp-controller="home" asp-action="AddDirector">Add Director</a></p>
+    </div>
+   <div>
+        <label for="movieName" class="form-label">Movie Name</label>
+        <input type="text" id="movieName" class="form-control" asp-for="movieName" aria-describedby="passwordHelpBlock">
+        <span asp-validation-for="movieName" class="text-danger"></span>
+   </div>
+    <div>
+        <label for="imgUrl" class="form-label">Movie img</label>
+        <input type="text" asp-for="imgUrl" id="imgUrl" class="form-control" aria-describedby="passwordHelpBlock">
+        <span asp-validation-for="imgUrl" class="text-danger"></span>
+    </div>
+   
+    <label for="ImdbPoint" class="form-label" >Imdb Point</label>
+    <div class="form-control mt-2 d-flex flex-column" id="ImdbPoint">
+        <div  > @await Component.InvokeAsync("ShowImdbs")</div>
+       
+    </div>
+
+    <div> <button class="btn btn-outline-warning mt-2" type="submit">Add</button></div>
+</form>

@@ -1,0 +1,27 @@
+﻿@model List<MovieModel>
+
+<h1>DashboardPage</h1>
+
+<form asp-controller="home" asp-action="dashboardPage" method="get">
+    <div class="d-flex flex-row gap-2">
+    <input type="text" name="searchString" class="form-control"/>
+    <button class="btn btn-warning" type="submit"><i class="fa fa-search"></i></button>
+    </div>
+</form>
+
+<div class="d-flex flex-row flex-wrap m-2">
+    @foreach(var item in Model)
+    {
+        <div class="card p-3 m-2" style="width:350px;">
+        <img src="@item.ImgUrl" class="card-img-top" style="background-size:cover;height:280px" />
+        <h3 class="card-title">@item.MovieName</h3>
+        <h5 class="card-text">@item.Director</h5>
+            <h6>Imdb: @item.ImdbPoint</h6>
+
+        </div>
+    }
+
+</div>
+
+
+

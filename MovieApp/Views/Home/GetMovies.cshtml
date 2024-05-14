@@ -1,0 +1,12 @@
+﻿@model List<MovieModel>
+
+@{
+    List<MovieModel> movies = Model;
+}
+
+<h1>movies</h1>
+<div>
+    <button class="btn btn-outline-warning"><a asp-controller="home" asp-action="AddMovie">Add Movie</a></button>
+</div>
+<custom-table moviemodel="@movies"></custom-table>
+
